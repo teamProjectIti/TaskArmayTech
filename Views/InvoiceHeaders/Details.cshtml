@@ -1,0 +1,49 @@
+﻿@model ArmyTechTask.Models.InvoiceHeader
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1 class="bg-warning p-2 text-light m-2">Details Invoice Header</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CustomerName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CustomerName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Invoicedate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Invoicedate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Branch)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Branch.BranchName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Cashier)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Cashier.CashierName)
+        </dd>
+    </dl>
+</div>
+<div>
+    <div class="row">
+                <div class="col-6">
+                       <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-outline-primary form-control">Edit</a> |
+ 
+               </div>
+                <div class="col-6">
+                    <a asp-action="Index" class="btn btn-outline-primary form-control">Back to List</a>
+                </div>
+            </div>
+</div>

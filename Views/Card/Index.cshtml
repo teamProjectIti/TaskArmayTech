@@ -1,0 +1,63 @@
+﻿@model  ArmyTechTask.Models.ModelView.details_header_viewModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-4"> 
+             <ul class="nav justify-content-center">
+                   @foreach (var item in Model.InvoiceHeader)
+                    {
+                       <li class="nav-item">
+                            <a class="nav-link active" >User Name : <strong class="text-primary"> @item.CustomerName</strong></a>
+                        </li>
+                    }
+             </ul>
+        </div>
+         <div class="col-12 col-md-8 p-2 border"> 
+             <div class="card">
+    <div class="card-header bg-primary text-light">
+        Product
+    </div>
+         @foreach (var item in Model.InvoiceDetailList)
+        {
+         <div class="mt-2">
+              <div class="card-body">
+            <h4 class="card-title">ItemName : @item.ItemName</h4>
+                </div>
+                <div class="card-footer text-muted">
+                    <p class="card-text">price : @item.ItemPrice</p>
+                    <p class="card-text">Count : @item.ItemCount</p>
+                </div>
+         </div>
+         <hr class="bg-primary"/>
+        }
+        <div class="p-2">
+            <h2>Total Price <span class="text-danger">@Model.SumTotal</span></h2>
+        </div>
+</div>
+             
+         </div>
+    </div>
+</div>
+
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+         *@
